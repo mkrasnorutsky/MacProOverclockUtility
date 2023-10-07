@@ -9,5 +9,6 @@ Compatible with macOS 10.6 or any later version (64bit kernel mode required for 
 Usage:
 
 sudo chown -R root:wheel ./overclock.kext
+
 sudo kextload -v ./overclock.kext
 
