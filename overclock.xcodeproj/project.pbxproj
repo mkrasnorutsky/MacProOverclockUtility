@@ -1,0 +1,298 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7428E7ED2AD1673F002FB586 /* smbus.s in Sources */ = {isa = PBXBuildFile; fileRef = 7428E7EC2AD1673F002FB586 /* smbus.s */; };
+		748E53AA2ACC224900DFAC87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 748E53A82ACC224900DFAC87 /* InfoPlist.strings */; };
+		748E53AC2ACC224900DFAC87 /* overclock.c in Sources */ = {isa = PBXBuildFile; fileRef = 748E53AB2ACC224900DFAC87 /* overclock.c */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7428E7EC2AD1673F002FB586 /* smbus.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = smbus.s; sourceTree = "<group>"; };
+		748E53A02ACC224900DFAC87 /* overclock.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = overclock.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		748E53A42ACC224900DFAC87 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = System/Library/Frameworks/Kernel.framework; sourceTree = SDKROOT; };
+		748E53A72ACC224900DFAC87 /* overclock-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "overclock-Info.plist"; sourceTree = "<group>"; };
+		748E53A92ACC224900DFAC87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		748E53AB2ACC224900DFAC87 /* overclock.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = overclock.c; sourceTree = "<group>"; };
+		748E53AD2ACC224900DFAC87 /* overclock-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "overclock-Prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		748E539B2ACC224800DFAC87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		748E53932ACC224800DFAC87 = {
+			isa = PBXGroup;
+			children = (
+				748E53A52ACC224900DFAC87 /* overclock */,
+				748E53A22ACC224900DFAC87 /* Frameworks */,
+				748E53A12ACC224900DFAC87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		748E53A12ACC224900DFAC87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				748E53A02ACC224900DFAC87 /* overclock.kext */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		748E53A22ACC224900DFAC87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				748E53A32ACC224900DFAC87 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		748E53A32ACC224900DFAC87 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				748E53A42ACC224900DFAC87 /* Kernel.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		748E53A52ACC224900DFAC87 /* overclock */ = {
+			isa = PBXGroup;
+			children = (
+				7428E7EC2AD1673F002FB586 /* smbus.s */,
+				748E53AB2ACC224900DFAC87 /* overclock.c */,
+				748E53A62ACC224900DFAC87 /* Supporting Files */,
+			);
+			path = overclock;
+			sourceTree = "<group>";
+		};
+		748E53A62ACC224900DFAC87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				748E53A72ACC224900DFAC87 /* overclock-Info.plist */,
+				748E53A82ACC224900DFAC87 /* InfoPlist.strings */,
+				748E53AD2ACC224900DFAC87 /* overclock-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		748E539C2ACC224800DFAC87 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		748E539F2ACC224800DFAC87 /* overclock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 748E53B02ACC224900DFAC87 /* Build configuration list for PBXNativeTarget "overclock" */;
+			buildPhases = (
+				748E539A2ACC224800DFAC87 /* Sources */,
+				748E539B2ACC224800DFAC87 /* Frameworks */,
+				748E539C2ACC224800DFAC87 /* Headers */,
+				748E539D2ACC224800DFAC87 /* Resources */,
+				748E539E2ACC224800DFAC87 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = overclock;
+			productName = overclock;
+			productReference = 748E53A02ACC224900DFAC87 /* overclock.kext */;
+			productType = "com.apple.product-type.kernel-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		748E53952ACC224800DFAC87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 748E53982ACC224800DFAC87 /* Build configuration list for PBXProject "overclock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				en,
+			);
+			mainGroup = 748E53932ACC224800DFAC87;
+			productRefGroup = 748E53A12ACC224900DFAC87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				748E539F2ACC224800DFAC87 /* overclock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		748E539D2ACC224800DFAC87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				748E53AA2ACC224900DFAC87 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		748E539E2ACC224800DFAC87 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		748E539A2ACC224800DFAC87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7428E7ED2AD1673F002FB586 /* smbus.s in Sources */,
+				748E53AC2ACC224900DFAC87 /* overclock.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		748E53A82ACC224900DFAC87 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				748E53A92ACC224900DFAC87 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		748E53AE2ACC224900DFAC87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		748E53AF2ACC224900DFAC87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		748E53B12ACC224900DFAC87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "overclock/overclock-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "overclock/overclock-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = co.mk.overclock;
+				MODULE_START = overclock_start;
+				MODULE_STOP = overclock_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Debug;
+		};
+		748E53B22ACC224900DFAC87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = x86_64;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "overclock/overclock-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INFOPLIST_FILE = "overclock/overclock-Info.plist";
+				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
+				MODULE_NAME = co.mk.overclock;
+				MODULE_START = overclock_start;
+				MODULE_STOP = overclock_stop;
+				MODULE_VERSION = 1.0.0d1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = kext;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		748E53982ACC224800DFAC87 /* Build configuration list for PBXProject "overclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748E53AE2ACC224900DFAC87 /* Debug */,
+				748E53AF2ACC224900DFAC87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		748E53B02ACC224900DFAC87 /* Build configuration list for PBXNativeTarget "overclock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				748E53B12ACC224900DFAC87 /* Debug */,
+				748E53B22ACC224900DFAC87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 748E53952ACC224800DFAC87 /* Project object */;
+}
