@@ -8,7 +8,8 @@ Compatible with macOS 10.5 or any later version
 
 Usage:
 
-1. Go to the Releases section and download the latest release
+1. Go to the Releases section and download the overclock.zip archive from the latest release. Unarchive to your Downloads folder. Finally your Downloads folder should have overclock folder containing overclock_fsb and overclock.kext inside.
+ 
 2. Open macOS terminal and execute commands:
 
     cd ~/Downloads/overclock
@@ -18,6 +19,7 @@ Usage:
     sudo kextload -v ./overclock.kext
 
 3. Click "Open System Preferences", unlock the settings by typing root password, click "Allow" button and then "Reboot" button
+
 4. Open macOS terminal and execute command to obtain the current FSB speed
 
     cd ~/Downloads/overclock
