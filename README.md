@@ -13,9 +13,13 @@ Usage:
 2. Open macOS terminal and execute commands:
 
     cd ~/Downloads/overclock
+    
     sudo xattr -r -d com.apple.quarantine ./overclock.kext
+    
     sudo xattr -r -d com.apple.quarantine ./overclock_fsb
+    
     sudo chown -R root:wheel ./overclock.kext
+    
     sudo kextload -v ./overclock.kext
 
 3. Click "Open System Preferences", unlock the settings by typing root password, click "Allow" button and then "Reboot" button
@@ -45,7 +49,9 @@ Or you can choose any other value instead of 420. But it is recommended to incre
 7. You have overclock the system but don`t see that it become fast. This is because of the Intel Speed Step algorithms that dynamically downclock your system. To get rid of this feature you should just delete the following a few files from your system. Execute in macOS terminal:
 
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro1_1.plist
+    
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro2_1.plist
+    
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro3_1.plist
 
   It works fine before macOS 11. Starting from macOS 11 you should do the following:
@@ -75,8 +81,11 @@ Or you can choose any other value instead of 420. But it is recommended to incre
   A writable copy of the System Volume is now mounted at ~/rootmount. Changes to the volume can be made. Execute in macOS terminal:
   
     cd ~/rootmount
+    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro1_1.plist
+    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro2_1.plist
+    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro3_1.plist
 
   d) After making changes, the modified copy of the System Volume must be marked as a bootable snapshot using bless. To create a snapshot of the modified volume, mark it as bootable, and set it as the new boot volume, run:
