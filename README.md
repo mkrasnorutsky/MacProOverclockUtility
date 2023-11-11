@@ -94,8 +94,9 @@ Or you can choose any other value instead of 420. But it is recommended to incre
   sudo chmod -R 755 ~/rootmount/Library/LaunchDaemons/com.example.plist
   
   sudo bless --folder ~/rootmount/System/Library/CoreServices \\
+  
     --bootefi --create-snapshot
-    
+
   sudo reboot
   
   The system will automatically reboot during the first boot after power on and then boot normally. 
