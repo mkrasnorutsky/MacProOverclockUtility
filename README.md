@@ -79,8 +79,7 @@ Or you can choose any other value instead of 420. But it is recommended to incre
 
   e) After making changes, the modified copy of the System Volume must be marked as a bootable snapshot using bless. To create a snapshot of the modified volume, mark it as bootable, and set it as the new boot volume, run:
   
-    sudo bless --folder ~/rootmount/System/Library/CoreServices \
-    --bootefi --create-snapshot
+    sudo bless --folder ~/rootmount/System/Library/CoreServices --bootefi --create-snapshot
     sudo reboot
     
 8. Finally, you can see the overclocked CPU frequency. Run the following command in the macOS terminal:
@@ -93,9 +92,7 @@ Or you can choose any other value instead of 420. But it is recommended to incre
   
   sudo chmod -R 755 ~/rootmount/Library/LaunchDaemons/com.example.plist
   
-  sudo bless --folder ~/rootmount/System/Library/CoreServices \\
-  
-  --bootefi --create-snapshot
+  sudo bless --folder ~/rootmount/System/Library/CoreServices --bootefi --create-snapshot
 
   sudo reboot
   
