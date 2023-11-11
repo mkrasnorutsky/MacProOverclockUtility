@@ -90,9 +90,12 @@ Or you can choose any other value instead of 420. But it is recommended to incre
 9. If you want your system to be overclocked automatically during the first boot, you should first copy all or the files from the distributive of this utility to the /Users/Shared/overclock folder so that the kext can be found at path /Users/Shared/overclock/overclock.kext. Edit the /Users/Shared/overclock/overclock_daemon.sh file first. You should disable automatic syntax correction in TextEdit before opening. You can see "SET_FSB=455" in the first line of the file. Replace 455 with the desired FSB frequency for automatic overclocking and save the file. After that you should perform actions described in p.7 c) of this instruction. Then run the following commands in terminal:
 
   sudo cp -R /Users/Shared/overclock/com.example.plist ~/rootmount/Library/LaunchDaemons
+  
   sudo chmod -R 755 ~/rootmount/Library/LaunchDaemons/com.example.plist
+  
   sudo bless --folder ~/rootmount/System/Library/CoreServices \
     --bootefi --create-snapshot
+    
   sudo reboot
   
   The system will automatically reboot during the first boot after power on and then boot normally. 
