@@ -8,22 +8,16 @@ Compatible with macOS 10.5 or any later version
 
 Usage:
 
-1. Go to the Releases section and download the overclock.zip archive from the latest release. Unarchive to your Downloads folder. Finally your Downloads folder should have overclock folder containing overclock_fsb and overclock.kext inside.
- 
+1. Go to the Releases section and download the latest release
 2. Open macOS terminal and execute commands:
 
     cd ~/Downloads/overclock
-    
     sudo xattr -r -d com.apple.quarantine ./overclock.kext
-    
     sudo xattr -r -d com.apple.quarantine ./overclock_fsb
-    
     sudo chown -R root:wheel ./overclock.kext
-    
     sudo kextload -v ./overclock.kext
 
 3. Click "Open System Preferences", unlock the settings by typing root password, click "Allow" button and then "Reboot" button
-
 4. Open macOS terminal and execute command to obtain the current FSB speed
 
     cd ~/Downloads/overclock
@@ -49,9 +43,7 @@ Or you can choose any other value instead of 420. But it is recommended to incre
 7. You have overclock the system but don`t see that it become fast. This is because of the Intel Speed Step algorithms that dynamically downclock your system. To get rid of this feature you should just delete the following a few files from your system. Execute in macOS terminal:
 
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro1_1.plist
-    
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro2_1.plist
-    
     sudo rm -rf /System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro3_1.plist
 
   It works fine before macOS 11. Starting from macOS 11 you should do the following:
@@ -78,17 +70,14 @@ Or you can choose any other value instead of 420. But it is recommended to incre
   
   sudo mount -o nobrowse -t apfs /dev/disk1s5 ~/rootmount
   
-  A writable copy of the System Volume is now mounted at ~/rootmount. Changes to the volume can be made. Execute in macOS terminal:
+  d) A writable copy of the System Volume is now mounted at ~/rootmount. Changes to the volume can be made. Execute in macOS terminal:
   
     cd ~/rootmount
-    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro1_1.plist
-    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro2_1.plist
-    
     sudo rm -rf ./System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Resources/MacPro3_1.plist
 
-  d) After making changes, the modified copy of the System Volume must be marked as a bootable snapshot using bless. To create a snapshot of the modified volume, mark it as bootable, and set it as the new boot volume, run:
+  e) After making changes, the modified copy of the System Volume must be marked as a bootable snapshot using bless. To create a snapshot of the modified volume, mark it as bootable, and set it as the new boot volume, run:
   
     sudo bless --folder ~/rootmount/System/Library/CoreServices \
     --bootefi --create-snapshot
@@ -97,3 +86,15 @@ Or you can choose any other value instead of 420. But it is recommended to incre
 8. Finally, you can see the overclocked CPU frequency. Run the following command in the macOS terminal:
 
     sudo powermetrics
+    
+9. If you want your system to be overclocked automatically during the first boot, you should first copy all or the files from the distributive of this utility to the /Users/Shared/overclock folder so that the kext can be found at path /Users/Shared/overclock/overclock.kext. Edit the /Users/Shared/overclock/overclock_daemon.sh file first. You should disable automatic syntax correction in TextEdit before opening. You can see "SET_FSB=455" in the first line of the file. Replace 455 with the desired FSB frequency for automatic overclocking and save the file. After that you should perform actions described in p.7 c) of this instruction. Then run the following commands in terminal:
+
+  sudo cp -R /Users/Shared/overclock/com.example.plist ~/rootmount/Library/LaunchDaemons
+  sudo chmod -R 755 ~/rootmount/Library/LaunchDaemons/com.example.plist
+  sudo bless --folder ~/rootmount/System/Library/CoreServices \
+    --bootefi --create-snapshot
+  sudo reboot
+  
+  The system will automatically reboot during the first boot after power on and then boot normally. 
+  if you want to change the target FSB frequency, you can edit the /Users/Shared/overclock/overclock_daemon.sh file again. If you rename or delete this file, the system will boot without automatic overclocking.
+
