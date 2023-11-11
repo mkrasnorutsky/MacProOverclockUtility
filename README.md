@@ -95,7 +95,7 @@ Or you can choose any other value instead of 420. But it is recommended to incre
   
   sudo bless --folder ~/rootmount/System/Library/CoreServices \\
   
-    --bootefi --create-snapshot
+  --bootefi --create-snapshot
 
   sudo reboot
   
